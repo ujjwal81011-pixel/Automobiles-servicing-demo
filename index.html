@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ApexAutoCare.com | Modern Automobile Servicing & Telemetry Diagnostics</title>
+  <meta name="description" content="Next-gen automobile servicing, computer telemetry diagnostics, performance tuning, and EV maintenance at ApexAutoCare.com. Book live service bays today.">
+  <meta name="keywords" content="ApexAutoCare.com, automobile servicing, car repair, telemetry diagnostics, EV maintenance, oil change, brake overhaul">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300e5ff'><path d='M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z'/></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <div class="announcement-badge">
+        <span class="pulse-dot"></span>
+        <span class="badge-text">LIVE NETWORK:</span>
+        <span class="accent-text">telemetry.apexautocare.com</span>
+      </div>
+      <div class="announcement-info">
+        <span>⚡ Real-time Bay Capacity: <strong>5 / 8 Bays Available</strong></span>
+        <span class="divider">|</span>
+        <a href="#tracker" class="announcement-link">Track Vehicle Status &rarr;</a>
+      </div>
+      <div class="announcement-emergency">
+        <a href="tel:+18005550199" id="topSosBtn" class="sos-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          24/7 SOS: sos.apexautocare.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Header & Navigation -->
+  <header class="main-header" id="mainHeader">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="ApexAutoCare.com Homepage">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/>
+            <circle cx="7" cy="14" r="1.5" fill="currentColor"/>
+            <circle cx="17" cy="14" r="1.5" fill="currentColor"/>
+            <path d="M5 11l1.5-4.5h11L19 11"/>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-domain">ApexAutoCare.com</span>
+          <span class="logo-subtext">Precision Workshop & Telemetry</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#estimator" class="nav-link">Cost Estimator</a></li>
+          <li><a href="#tracker" class="nav-link">Live Bay Tracker</a></li>
+          <li><a href="#specialists" class="nav-link">Engineers</a></li>
+          <li><a href="#reviews" class="nav-link">Client Reviews</a></li>
+          <li><a href="#locations" class="nav-link">Hubs</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Buttons -->
+      <div class="header-actions">
+        <button class="btn btn-outline" id="headerTrackBtn" onclick="scrollToSection('tracker')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Track Job</span>
+        </button>
+        <button class="btn btn-primary" id="openBookingModalBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Book Bay</span>
+        </button>
+        
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <span class="drawer-domain">ApexAutoCare.com</span>
+        <span class="drawer-status">● Live Service Node Active</span>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close navigation menu">&times;</button>
+    </div>
+    <div class="drawer-content">
+      <ul class="drawer-links">
+        <li><a href="#services" class="drawer-link"><span class="link-icon">⚙️</span> Services Catalogue</a></li>
+        <li><a href="#estimator" class="drawer-link"><span class="link-icon">⚡</span> Instant Cost Estimator</a></li>
+        <li><a href="#tracker" class="drawer-link"><span class="link-icon">📡</span> Live Bay Radar</a></li>
+        <li><a href="#specialists" class="drawer-link"><span class="link-icon">👨‍🔧</span> Domain Specialists</a></li>
+        <li><a href="#reviews" class="drawer-link"><span class="link-icon">⭐</span> Fleet & Client Ratings</a></li>
+        <li><a href="#locations" class="drawer-link"><span class="link-icon">📍</span> Workshop Hub Domains</a></li>
+      </ul>
+
+      <div class="drawer-contact-card">
+        <span class="card-caption">SUPPORT & DISPATCH</span>
+        <div class="domain-tag">support.apexautocare.com</div>
+        <div class="domain-tag">dispatch.apexautocare.com</div>
+        <a href="tel:+18005550199" class="btn btn-sos btn-block mt-3">
+          📞 Instant Emergency Hotline
+        </a>
+      </div>
+
+      <div class="drawer-cta">
+        <button class="btn btn-primary btn-block" id="drawerBookBtn">
+          Schedule Service Bay Now
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span class="pill-dot"></span>
+          <span class="pill-code">NODE // APEX-SERVICE-V5.4</span>
+          <span class="pill-divider">|</span>
+          <span class="pill-domain">status.apexautocare.com</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Next-Generation <span class="text-gradient">Automobile Servicing</span> & Computer Telemetry.
+        </h1>
+        
+        <p class="hero-subtitle">
+          Engineered for peak performance, extreme reliability, and total diagnostic transparency. Powered by certified domain master mechanics at <span class="highlight-domain">ApexAutoCare.com</span>.
+        </p>
+
+        <!-- Hero Actions -->
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" id="heroBookCta" onclick="openBookingModal()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="12" y1="18" x2="12" y2="12"></line>
+              <line x1="9" y1="15" x2="15" y2="15"></line>
+            </svg>
+            <span>Book Service Bay</span>
+          </button>
+          
+          <button class="btn btn-secondary btn-lg" onclick="scrollToSection('estimator')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+              <line x1="8" y1="6" x2="16" y2="6"></line>
+              <line x1="16" y1="14" x2="16" y2="18"></line>
+              <path d="M16 10h.01"></path>
+              <path d="M12 10h.01"></path>
+              <path d="M8 10h.01"></path>
+              <path d="M12 14h.01"></path>
+              <path d="M8 14h.01"></path>
+              <path d="M12 18h.01"></path>
+              <path d="M8 18h.01"></path>
+            </svg>
+            <span>Calculate Cost</span>
+          </button>
+        </div>
+
+        <!-- Trust Features Bar -->
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <div class="trust-text">
+              <strong>100% Genuine OEM</strong>
+              <span>parts.oemcatalogue.de</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">⚡</div>
+            <div class="trust-text">
+              <strong>Zero-Wait Express</strong>
+              <span>fastlane.turbocare.io</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🛡️</div>
+            <div class="trust-text">
+              <strong>24-Month Warranty</strong>
+              <span>guarantee.apexautocare.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card with Workshop Image -->
+      <div class="hero-visual">
+        <div class="visual-card-wrapper">
+          <div class="image-frame">
+            <img src="assets/images/hero.jpg" alt="ApexAutoCare.com State-of-the-art Automobile Servicing Bay" class="hero-img" loading="eager" width="1280" height="720">
+            <div class="image-overlay-glow"></div>
+            
+            <!-- Floating Live Telemetry Card -->
+            <div class="floating-telemetry-badge">
+              <div class="telemetry-header">
+                <span class="live-indicator"></span>
+                <span class="telemetry-label">BAY 03 // ACTIVE DIAGNOSTIC</span>
+              </div>
+              <div class="telemetry-body">
+                <div class="telemetry-car">Porsche 911 GT3 (Twin-Turbo)</div>
+                <div class="telemetry-bar-bg">
+                  <div class="telemetry-bar-fill" style="width: 78%;"></div>
+                </div>
+                <div class="telemetry-meta">
+                  <span>ECU Telemetry: <strong>Synchronized</strong></span>
+                  <span class="telemetry-domain">telemetry-node.apexautocare.com</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Quick Stats -->
+            <div class="floating-quick-stats">
+              <div class="stat-number">4.98 ★</div>
+              <div class="stat-source">reviews.verifiedmotors.io</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Performance Metrics Ticker -->
+    <div class="hero-stats-band">
+      <div class="container stats-grid">
+        <div class="stat-box">
+          <span class="stat-val" data-target="24500">24,500+</span>
+          <span class="stat-name">Vehicles Serviced</span>
+          <span class="stat-domain">metrics.apexautocare.com</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val">99.8%</span>
+          <span class="stat-name">Diagnostic Accuracy</span>
+          <span class="stat-domain">accuracy.turboscan.io</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val">45 Min</span>
+          <span class="stat-name">Express Lube Turnaround</span>
+          <span class="stat-domain">express.quickservice.tech</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val">100%</span>
+          <span class="stat-name">OEM Certified Parts</span>
+          <span class="stat-domain">certified.globalautoparts.org</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE LIVE BAY TRACKER (RADAR) -->
+  <section class="section-tracker" id="tracker">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-eyebrow">REAL-TIME SERVICE RADAR</div>
+        <h2 class="section-title">Live Service Bay Tracker</h2>
+        <p class="section-desc">
+          Enter your vehicle service tracking token or try demo jobs to watch real-time bay telemetry at <span class="highlight-domain">radar.apexautocare.com</span>.
+        </p>
+      </div>
+
+      <div class="tracker-card">
+        <!-- Tracker Input Bar -->
+        <div class="tracker-input-wrapper">
+          <div class="tracker-input-group">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="trackerInput" placeholder="Enter Job ID, e.g. JOB-8821.apexautocare.com" value="JOB-8821.apexautocare.com">
+            <button class="btn btn-primary" id="trackSearchBtn">Inspect Job</button>
+          </div>
+          
+          <!-- Sample Demo Chips -->
+          <div class="tracker-demo-chips">
+            <span class="chips-label">Demo Tokens:</span>
+            <button class="chip-btn active" onclick="loadTrackerJob('JOB-8821.apexautocare.com')">JOB-8821.apexautocare.com</button>
+            <button class="chip-btn" onclick="loadTrackerJob('JOB-4412.turbocare.tech')">JOB-4412.turbocare.tech</button>
+            <button class="chip-btn" onclick="loadTrackerJob('JOB-9903.gearshift.io')">JOB-9903.gearshift.io</button>
+          </div>
+        </div>
+
+        <!-- Live Job Status Display Area -->
+        <div class="job-status-panel" id="jobStatusPanel">
+          <div class="job-header">
+            <div class="job-meta">
+              <span class="job-badge" id="jobStatusBadge">IN PROGRESS // ACTIVE BAY 03</span>
+              <h3 class="job-car-title" id="jobCarTitle">2024 Porsche 911 GT3 (Twin Turbo)</h3>
+              <div class="job-identifiers">
+                <span>Job Token: <code id="jobTokenDisplay">JOB-8821.apexautocare.com</code></span>
+                <span class="dot-sep">•</span>
+                <span>Assigned Specialist: <a href="#specialists" id="jobEngineerDisplay" class="link-domain">diagnostics.turboscan.io</a></span>
+              </div>
+            </div>
+            
+            <div class="job-timer-box">
+              <span class="timer-label">ESTIMATED COMPLETION</span>
+              <div class="timer-clock" id="jobTimerClock">42m 18s Remaining</div>
+              <span class="timer-bay" id="jobBayId">Bay: central-hub.apexautocare.com #03</span>
+            </div>
+          </div>
+
+          <!-- Visual Progress Stepper -->
+          <div class="stepper-container">
+            <div class="stepper-progress-track">
+              <div class="stepper-progress-fill" id="stepperFill" style="width: 58%;"></div>
+            </div>
+            <div class="stepper-steps" id="stepperStepsList">
+              <div class="step-item completed">
+                <div class="step-circle">✓</div>
+                <div class="step-name">1. Vehicle Intake</div>
+                <div class="step-time">09:15 AM - Completed</div>
+              </div>
+              <div class="step-item completed">
+                <div class="step-circle">✓</div>
+                <div class="step-name">2. 120-Pt Telemetry Scan</div>
+                <div class="step-time">09:40 AM - Completed</div>
+              </div>
+              <div class="step-item active">
+                <div class="step-circle"><span class="step-pulse"></span></div>
+                <div class="step-name">3. Precision Servicing</div>
+                <div class="step-time">In Progress (Bay 03)</div>
+              </div>
+              <div class="step-item pending">
+                <div class="step-circle">4</div>
+                <div class="step-name">4. 3D Laser Alignment</div>
+                <div class="step-time">Queue Standby</div>
+              </div>
+              <div class="step-item pending">
+                <div class="step-circle">5</div>
+                <div class="step-name">5. Road QC & Detailing</div>
+                <div class="step-time">Queue Standby</div>
+              </div>
+              <div class="step-item pending">
+                <div class="step-circle">6</div>
+                <div class="step-name">6. Ready for Pickup</div>
+                <div class="step-time">Final Handoff</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technician Live Telemetry Notes -->
+          <div class="technician-notes">
+            <div class="tech-avatar">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="tech-message">
+              <div class="tech-author">
+                <strong>diagnostics.turboscan.io</strong> 
+                <span class="tech-time">Logged 8 minutes ago</span>
+                <span class="badge-tag">TÜV Certified</span>
+              </div>
+              <p class="tech-quote" id="jobTechNotes">
+                "ECU flashing complete. 0 error codes detected across CAN-bus buslines. Brake fluid dry boiling point tested at 310°C (optimal). Installing Brembo ceramic compound components now."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE INSTANT SERVICE COST ESTIMATOR -->
+  <section class="section-estimator" id="estimator">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-eyebrow">TRANSPARENT PRICING CALCULATOR</div>
+        <h2 class="section-title">Instant Service Cost Estimator</h2>
+        <p class="section-desc">
+          Configure your vehicle category and select required services. Get instant upfront estimates calculated live via <span class="highlight-domain">pricing-engine.apexautocare.com</span>.
+        </p>
+      </div>
+
+      <div class="estimator-grid">
+        <!-- Left: Configuration Controls -->
+        <div class="estimator-controls">
+          <!-- Step 1: Vehicle Category -->
+          <div class="calc-section">
+            <div class="calc-step-header">
+              <span class="step-badge">STEP 1</span>
+              <h3>Select Vehicle Category</h3>
+            </div>
+            <div class="vehicle-selector-grid" id="vehicleSelector">
+              <button class="vehicle-btn active" data-vehicle="sedan" data-multiplier="1.0">
+                <span class="vehicle-icon">🚗</span>
+                <span class="vehicle-title">Compact & Sedan</span>
+                <span class="vehicle-sub">e.g. Civic, Corolla, Model 3</span>
+              </button>
+              <button class="vehicle-btn" data-vehicle="suv" data-multiplier="1.25">
+                <span class="vehicle-icon">🚙</span>
+                <span class="vehicle-title">SUV & Crossover</span>
+                <span class="vehicle-sub">e.g. RAV4, CR-V, Explorer</span>
+              </button>
+              <button class="vehicle-btn" data-vehicle="luxury" data-multiplier="1.6">
+                <span class="vehicle-icon">🏎️</span>
+                <span class="vehicle-title">Performance & Luxury</span>
+                <span class="vehicle-sub">e.g. Porsche, BMW M, AMG</span>
+              </button>
+              <button class="vehicle-btn" data-vehicle="ev" data-multiplier="1.2">
+                <span class="vehicle-icon">⚡</span>
+                <span class="vehicle-title">Electric (EV) & Hybrid</span>
+                <span class="vehicle-sub">e.g. Taycan, Tesla, Ioniq</span>
+              </button>
+              <button class="vehicle-btn" data-vehicle="truck" data-multiplier="1.35">
+                <span class="vehicle-icon">🛻</span>
+                <span class="vehicle-title">Truck & Commercial</span>
+                <span class="vehicle-sub">e.g. F-150, Silverado, Ram</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Service Packages -->
+          <div class="calc-section mt-4">
+            <div class="calc-step-header">
+              <span class="step-badge">STEP 2</span>
+              <h3>Select Desired Service Packages</h3>
+            </div>
+            
+            <div class="services-checklist" id="servicesChecklist">
+              <!-- Item 1 -->
+              <label class="service-checkbox-card" for="svc-oil">
+                <input type="checkbox" id="svc-oil" data-price="95" data-duration="45" data-name="Full Synthetic Motul Fluid Service" checked>
+                <div class="svc-check-custom"></div>
+                <div class="svc-details">
+                  <div class="svc-top">
+                    <span class="svc-name">Full Synthetic Motul Fluid & Filter Service</span>
+                    <span class="svc-base-price">$95</span>
+                  </div>
+                  <p class="svc-desc">Premium Motul 8100 synthetic oil, OEM microfilter change, 40-point visual fluid safety check.</p>
+                  <div class="svc-domain-meta">certified by <code>motul.synthetics.global</code></div>
+                </div>
+              </label>
+
+              <!-- Item 2 -->
+              <label class="service-checkbox-card" for="svc-diag">
+                <input type="checkbox" id="svc-diag" data-price="120" data-duration="40" data-name="Full Computer OBD-IV Telemetry Diagnostic" checked>
+                <div class="svc-check-custom"></div>
+                <div class="svc-details">
+                  <div class="svc-top">
+                    <span class="svc-name">Full Computer OBD-IV Telemetry Diagnostic</span>
+                    <span class="svc-base-price">$120</span>
+                  </div>
+                  <p class="svc-desc">Deep CAN-bus scan, ECU fault code analysis, live actuator testing, and digital health report.</p>
+                  <div class="svc-domain-meta">powered by <code>turboscan.diagnostic-hub.net</code></div>
+                </div>
+              </label>
+
+              <!-- Item 3 -->
+              <label class="service-checkbox-card" for="svc-brakes">
+                <input type="checkbox" id="svc-brakes" data-price="210" data-duration="60" data-name="Brembo Ceramic Brake Overhaul">
+                <div class="svc-check-custom"></div>
+                <div class="svc-details">
+                  <div class="svc-top">
+                    <span class="svc-name">Ceramic Brake Overhaul & Caliper Service</span>
+                    <span class="svc-base-price">$210</span>
+                  </div>
+                  <p class="svc-desc">High-friction ceramic brake pads, rotor micrometer measurement, hydraulic bleed with DOT 5.1 fluid.</p>
+                  <div class="svc-domain-meta">parts via <code>brembo-official.oemparts.de</code></div>
+                </div>
+              </label>
+
+              <!-- Item 4 -->
+              <label class="service-checkbox-card" for="svc-align">
+                <input type="checkbox" id="svc-align" data-price="110" data-duration="50" data-name="3D Laser High-Precision Wheel Alignment">
+                <div class="svc-check-custom"></div>
+                <div class="svc-details">
+                  <div class="svc-top">
+                    <span class="svc-name">3D Laser High-Precision Wheel Alignment</span>
+                    <span class="svc-base-price">$110</span>
+                  </div>
+                  <p class="svc-desc">Multi-axis laser camber, caster, toe calibration to OEM factory dynamic specs for zero tire wear.</p>
+                  <div class="svc-domain-meta">equipment by <code>hunter-align.precisiontools.com</code></div>
+                </div>
+              </label>
+
+              <!-- Item 5 -->
+              <label class="service-checkbox-card" for="svc-ac">
+                <input type="checkbox" id="svc-ac" data-price="85" data-duration="35" data-name="AC Climate & Ozone Sterilization">
+                <div class="svc-check-custom"></div>
+                <div class="svc-details">
+                  <div class="svc-top">
+                    <span class="svc-name">A/C Climate Recharge & Ozone Cabin Sterilization</span>
+                    <span class="svc-base-price">$85</span>
+                  </div>
+                  <p class="svc-desc">R134a/R1234yf refrigerant vacuum evacuation, condenser dye leak check, cabin HEPA replacement.</p>
+                  <div class="svc-domain-meta">verified by <code>denso-climate.autocare.jp</code></div>
+                </div>
+              </label>
+
+              <!-- Item 6 -->
+              <label class="service-checkbox-card" for="svc-transmission">
+                <input type="checkbox" id="svc-transmission" data-price="175" data-duration="60" data-name="Transmission & Drivetrain Hydro Flush">
+                <div class="svc-check-custom"></div>
+                <div class="svc-details">
+                  <div class="svc-top">
+                    <span class="svc-name">Transmission & Drivetrain Hydro Flush</span>
+                    <span class="svc-base-price">$175</span>
+                  </div>
+                  <p class="svc-desc">Total fluid thermal exchange for automatic/DCT gearboxes with magnetic pan debris inspection.</p>
+                  <div class="svc-domain-meta">lubricants by <code>zf-transmission.powertrain.de</code></div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Real-time Estimate Card (Sticky on Desktop) -->
+        <div class="estimator-summary-panel">
+          <div class="summary-card">
+            <div class="summary-header">
+              <span class="summary-tag">ESTIMATE QUOTE</span>
+              <span class="summary-id" id="summaryQuoteId">QUO-742.apexautocare.com</span>
+            </div>
+
+            <div class="summary-price-box">
+              <span class="currency-symbol">$</span>
+              <span class="total-price" id="calcTotalPrice">215</span>
+              <span class="tax-tag">+ Taxes & Eco-fees</span>
+            </div>
+
+            <div class="summary-breakdown-list" id="summaryBreakdownList">
+              <!-- Dynamically populated via JS -->
+            </div>
+
+            <div class="summary-meta-grid">
+              <div class="meta-cell">
+                <span class="meta-label">Est. Turnaround</span>
+                <span class="meta-val" id="calcTotalTime">1h 25m</span>
+              </div>
+              <div class="meta-cell">
+                <span class="meta-label">Warranty</span>
+                <span class="meta-val">24 Mo / 40,000 KM</span>
+              </div>
+              <div class="meta-cell">
+                <span class="meta-label">OEM Certified</span>
+                <span class="meta-val">100% Genuine</span>
+              </div>
+              <div class="meta-cell">
+                <span class="meta-label">Service Node</span>
+                <span class="meta-val">central-hub.apexautocare.com</span>
+              </div>
+            </div>
+
+            <div class="summary-actions">
+              <button class="btn btn-primary btn-block btn-lg" id="bookWithEstimateBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Book This Estimate</span>
+              </button>
+              <button class="btn btn-ghost btn-block" onclick="resetCalculator()">
+                Reset Options
+              </button>
+            </div>
+
+            <div class="summary-guarantee">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>Zero Hidden Fees Guaranteed by <strong class="domain-inline">policy.apexautocare.com</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES COMPREHENSIVE SHOWCASE -->
+  <section class="section-services" id="services">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-eyebrow">PRECISION ENGINEERING SERVICES</div>
+        <h2 class="section-title">Specialized Automobile Capabilities</h2>
+        <p class="section-desc">
+          From micro-second ECU tuning to complete mechanical overhauls, discover our diagnostic-led service disciplines at <span class="highlight-domain">catalogue.apexautocare.com</span>.
+        </p>
+
+        <!-- Service Category Tabs -->
+        <div class="category-filter-pills" id="serviceFilterBar">
+          <button class="filter-pill active" data-category="all">All Services</button>
+          <button class="filter-pill" data-category="diagnostics">Computer Diagnostics</button>
+          <button class="filter-pill" data-category="powertrain">Engine & Powertrain</button>
+          <button class="filter-pill" data-category="brakes">Brakes & Suspension</button>
+          <button class="filter-pill" data-category="ev">EV & Hybrid Hub</button>
+        </div>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="services-grid" id="servicesCardsGrid">
+        
+        <!-- Card 1: Advanced Diagnostics -->
+        <div class="service-card" data-category="diagnostics">
+          <div class="svc-card-image">
+            <img src="assets/images/diagnostics.jpg" alt="Automotive Diagnostic Telemetry Scanner" loading="lazy" width="600" height="350">
+            <span class="svc-card-tag">OBD-IV & CAN-BUS</span>
+          </div>
+          <div class="svc-card-body">
+            <div class="svc-card-domain">diagnostics.turboscan.io</div>
+            <h3 class="svc-card-title">Computerized Telemetry & ECU Calibration</h3>
+            <p class="svc-card-text">
+              Real-time interrogation of engine control units, sensor threshold mapping, spark advance validation, and firmware reflashing to factory specs.
+            </p>
+            <ul class="svc-card-features">
+              <li>Live waveform oscilloscope inspection</li>
+              <li>Emissions & EVAP fault isolation</li>
+              <li>Software remapping & adaptive resets</li>
+            </ul>
+            <div class="svc-card-footer">
+              <span class="svc-card-price">From $120</span>
+              <button class="btn btn-sm btn-outline" onclick="selectServiceFromCard('Full Computer OBD-IV Telemetry Diagnostic')">Select Service</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: High Performance Brakes -->
+        <div class="service-card" data-category="brakes">
+          <div class="svc-card-image">
+            <img src="assets/images/brakes.jpg" alt="High performance Brembo ceramic brake caliper servicing" loading="lazy" width="600" height="350">
+            <span class="svc-card-tag">STOPPING POWER</span>
+          </div>
+          <div class="svc-card-body">
+            <div class="svc-card-domain">brembo-official.oemparts.de</div>
+            <h3 class="svc-card-title">Ceramic Brake Systems & Hydraulic Service</h3>
+            <p class="svc-card-text">
+              Complete overhaul of high-friction multi-piston calipers, ceramic disc rotors, stainless braided brake lines, and anti-lock ABS module bleeding.
+            </p>
+            <ul class="svc-card-features">
+              <li>Micrometer rotor runout & taper check</li>
+              <li>DOT 5.1 synthetic brake fluid flush</li>
+              <li>Track-grade bedding-in procedure</li>
+            </ul>
+            <div class="svc-card-footer">
+              <span class="svc-card-price">From $210</span>
+              <button class="btn btn-sm btn-outline" onclick="selectServiceFromCard('Brembo Ceramic Brake Overhaul')">Select Service</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Powertrain & Engine Rebuilding -->
+        <div class="service-card" data-category="powertrain">
+          <div class="svc-card-image">
+            <img src="assets/images/hero.jpg" alt="Engine overhaul bay" loading="lazy" width="600" height="350">
+            <span class="svc-card-tag">POWERTRAIN</span>
+          </div>
+          <div class="svc-card-body">
+            <div class="svc-card-domain">powertrain.v8master.tech</div>
+            <h3 class="svc-card-title">Engine Overhaul & Timing System Rebuild</h3>
+            <p class="svc-card-text">
+              Precision replacement of timing belts/chains, variable valve timing actuators, turbocharger wastegates, and high-pressure fuel delivery pumps.
+            </p>
+            <ul class="svc-card-features">
+              <li>Borescope cylinder wall cylinder inspection</li>
+              <li>Compression & leak-down telemetry</li>
+              <li>OEM water pump & tensioner replacement</li>
+            </ul>
+            <div class="svc-card-footer">
+              <span class="svc-card-price">From $350</span>
+              <button class="btn btn-sm btn-outline" onclick="selectServiceFromCard('Engine Overhaul')">Select Service</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: EV & High Voltage Systems -->
+        <div class="service-card" data-category="ev">
+          <div class="svc-card-image">
+            <div class="ev-tech-placeholder">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+              </svg>
+              <span>HIGH VOLTAGE EV HUB</span>
+            </div>
+            <span class="svc-card-tag">EV SPECIALIZED</span>
+          </div>
+          <div class="svc-card-body">
+            <div class="svc-card-domain">ev-diagnostics.voltcare.io</div>
+            <h3 class="svc-card-title">High-Voltage EV Battery & Inverter Service</h3>
+            <p class="svc-card-text">
+              Insulated 1000V diagnostic health checks, lithium cell pack balancing, coolant loop dielectric fluid exchange, and regenerative braking calibration.
+            </p>
+            <ul class="svc-card-features">
+              <li>State-of-Health (SoH) battery report</li>
+              <li>Inverter MOSFET heat sink inspection</li>
+              <li>Electric drive motor bearing acoustic check</li>
+            </ul>
+            <div class="svc-card-footer">
+              <span class="svc-card-price">From $190</span>
+              <button class="btn btn-sm btn-outline" onclick="selectServiceFromCard('High-Voltage EV Battery Conditioning')">Select Service</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: 3D Laser Alignment & Suspension -->
+        <div class="service-card" data-category="brakes">
+          <div class="svc-card-image">
+            <div class="ev-tech-placeholder">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#ffb300" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="2" x2="12" y2="22"></line>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+              </svg>
+              <span>LASER DYNAMICS</span>
+            </div>
+            <span class="svc-card-tag">CHASSIS & SUSPENSION</span>
+          </div>
+          <div class="svc-card-body">
+            <div class="svc-card-domain">chassis.apexhandling.org</div>
+            <h3 class="svc-card-title">Adaptive Suspension & 3D Laser Wheel Alignment</h3>
+            <p class="svc-card-text">
+              High-accuracy laser alignment measuring toe, camber, caster, and thrust angle down to 0.01 degrees for razor-sharp steering and zero uneven tire wear.
+            </p>
+            <ul class="svc-card-features">
+              <li>Air suspension airbag & compressor testing</li>
+              <li>Bushing polyurethane inspection</li>
+              <li>Steering angle sensor (SAS) recalibration</li>
+            </ul>
+            <div class="svc-card-footer">
+              <span class="svc-card-price">From $110</span>
+              <button class="btn btn-sm btn-outline" onclick="selectServiceFromCard('3D Laser High-Precision Wheel Alignment')">Select Service</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Climate Control & AC -->
+        <div class="service-card" data-category="diagnostics">
+          <div class="svc-card-image">
+            <div class="ev-tech-placeholder">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="1.5">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>CLIMATE STERILIZATION</span>
+            </div>
+            <span class="svc-card-tag">CLIMATE SYSTEMS</span>
+          </div>
+          <div class="svc-card-body">
+            <div class="svc-card-domain">denso-climate.autocare.jp</div>
+            <h3 class="svc-card-title">Dual-Zone AC Recharge & Cabin Ozone Purge</h3>
+            <p class="svc-card-text">
+              Precision evacuation and vacuum charging of R134a/R1234yf refrigerants, PAG oil top-up, evaporator anti-bacterial fogging, and HEPA microfiltration.
+            </p>
+            <ul class="svc-card-features">
+              <li>Electronic refrigerant sniffer leak test</li>
+              <li>Compressor clutch duty-cycle test</li>
+              <li>99.9% airborne pathogen neutralization</li>
+            </ul>
+            <div class="svc-card-footer">
+              <span class="svc-card-price">From $85</span>
+              <button class="btn btn-sm btn-outline" onclick="selectServiceFromCard('AC Climate & Ozone Sterilization')">Select Service</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALIST MASTER ENGINEERS (ALL DOMAIN NAMES) -->
+  <section class="section-specialists" id="specialists">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-eyebrow">DOMAINS OF EXPERTISE</div>
+        <h2 class="section-title">Certified Master Engineers & Leads</h2>
+        <p class="section-desc">
+          Every vehicle is assigned to a certified specialist lead. All diagnostic signatures and repair logs are cryptographically stamped under their respective technical domains.
+        </p>
+      </div>
+
+      <div class="specialists-grid">
+        <!-- Specialist 1 -->
+        <div class="specialist-card">
+          <div class="specialist-badge">LEAD DIAGNOSTICIAN</div>
+          <div class="specialist-avatar">
+            <span class="avatar-icon">💻</span>
+          </div>
+          <div class="specialist-domain">diagnostics.turboscan.io</div>
+          <div class="specialist-role">Chief of Telemetry & Electronics</div>
+          <p class="specialist-bio">
+            14+ years specializing in CAN-bus buslines, Bosch Motronic ECUs, and high-frequency sensor fault waveform analysis.
+          </p>
+          <div class="specialist-credentials">
+            <span class="badge-credential">ASE Master L1</span>
+            <span class="badge-credential">Bosch Certified</span>
+          </div>
+          <div class="specialist-contact">
+            <a href="mailto:lead@diagnostics.turboscan.io" class="specialist-link">lead@diagnostics.turboscan.io</a>
+          </div>
+        </div>
+
+        <!-- Specialist 2 -->
+        <div class="specialist-card">
+          <div class="specialist-badge">POWERTRAIN SPECIALIST</div>
+          <div class="specialist-avatar">
+            <span class="avatar-icon">⚙️</span>
+          </div>
+          <div class="specialist-domain">powertrain.v8master.tech</div>
+          <div class="specialist-role">Head of Engine & Mechanical Assembly</div>
+          <p class="specialist-bio">
+            Precision rebuilding of naturally aspirated, twin-turbo, and hybrid internal combustion engines with micrometer tolerance calibration.
+          </p>
+          <div class="specialist-credentials">
+            <span class="badge-credential">TÜV Verified</span>
+            <span class="badge-credential">AMG Specialist</span>
+          </div>
+          <div class="specialist-contact">
+            <a href="mailto:chief@powertrain.v8master.tech" class="specialist-link">chief@powertrain.v8master.tech</a>
+          </div>
+        </div>
+
+        <!-- Specialist 3 -->
+        <div class="specialist-card">
+          <div class="specialist-badge">HIGH-VOLTAGE LEAD</div>
+          <div class="specialist-avatar">
+            <span class="avatar-icon">⚡</span>
+          </div>
+          <div class="specialist-domain">ev-diagnostics.voltcare.io</div>
+          <div class="specialist-role">High-Voltage EV & Battery Architect</div>
+          <p class="specialist-bio">
+            Certified on 800-volt EV architectures, liquid thermal management systems, and inverter circuit troubleshooting.
+          </p>
+          <div class="specialist-credentials">
+            <span class="badge-credential">SAE High-Voltage</span>
+            <span class="badge-credential">Tesla & Taycan Cert</span>
+          </div>
+          <div class="specialist-contact">
+            <a href="mailto:architect@ev-diagnostics.voltcare.io" class="specialist-link">architect@ev-diagnostics.voltcare.io</a>
+          </div>
+        </div>
+
+        <!-- Specialist 4 -->
+        <div class="specialist-card">
+          <div class="specialist-badge">CHASSIS & DYNAMICS</div>
+          <div class="specialist-avatar">
+            <span class="avatar-icon">🏎️</span>
+          </div>
+          <div class="specialist-domain">chassis.apexhandling.org</div>
+          <div class="specialist-role">Chassis Geometry & Braking Engineer</div>
+          <p class="specialist-bio">
+            Track and road suspension tuning, carbon-ceramic brake system integration, and computer-assisted 3D alignment calibrations.
+          </p>
+          <div class="specialist-credentials">
+            <span class="badge-credential">Hunter Engineering</span>
+            <span class="badge-credential">Brembo Certified</span>
+          </div>
+          <div class="specialist-contact">
+            <a href="mailto:dynamics@chassis.apexhandling.org" class="specialist-link">dynamics@chassis.apexhandling.org</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERIFIED CUSTOMER REVIEWS (ALL DOMAIN NAMES) -->
+  <section class="section-reviews" id="reviews">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-eyebrow">VERIFIED FLEET & CLIENT REVIEWS</div>
+        <h2 class="section-title">Trusted by Automotive Networks</h2>
+        <p class="section-desc">
+          Read genuine reviews verified through enterprise and fleet domain authentications at <span class="highlight-domain">feedback.apexautocare.com</span>.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-stars">★★★★★</div>
+            <span class="verified-tag">✓ Domain Verified</span>
+          </div>
+          <p class="review-text">
+            "We run a fleet of 45 executive sedans and track day cars. <strong class="domain-inline">ApexAutoCare.com</strong> provides unmatched live telemetry tracking. We can see the exact progress of every car right down to the torque specs."
+          </p>
+          <div class="review-author-box">
+            <div class="author-domain">fleet-ops.swiftfreight.com</div>
+            <div class="author-vehicle">Fleet: 45 BMW 5-Series & Sprinter Vans</div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-stars">★★★★★</div>
+            <span class="verified-tag">✓ Domain Verified</span>
+          </div>
+          <p class="review-text">
+            "My Porsche 911 GT3 had an intermittent CAN-bus glitch that two dealerships failed to diagnose. <strong class="domain-inline">diagnostics.turboscan.io</strong> located the damaged wiring harness in 30 minutes. Absolute masters."
+          </p>
+          <div class="review-author-box">
+            <div class="author-domain">owner.veloceauto.club</div>
+            <div class="author-vehicle">Vehicle: 2023 Porsche 911 GT3</div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-stars">★★★★★</div>
+            <span class="verified-tag">✓ Domain Verified</span>
+          </div>
+          <p class="review-text">
+            "The instant cost estimator at <strong class="domain-inline">pricing-engine.apexautocare.com</strong> was exact to the penny. No surprise add-ons when picking up my Model S Plaid. Turnaround was under 2 hours!"
+          </p>
+          <div class="review-author-box">
+            <div class="author-domain">admin.urbanriders.io</div>
+            <div class="author-vehicle">Vehicle: Tesla Model S Plaid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE LOCATIONS & WORKSHOP HUBS (ALL DOMAIN NAMES) -->
+  <section class="section-locations" id="locations">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-eyebrow">WORKSHOP NETWORK</div>
+        <h2 class="section-title">Regional Service Hubs</h2>
+        <p class="section-desc">
+          High-capacity automated service bays available across all regional nodes. Direct booking access via respective subdomain nodes.
+        </p>
+      </div>
+
+      <div class="locations-grid">
+        <!-- Hub 1 -->
+        <div class="location-card">
+          <div class="location-status">
+            <span class="pulse-dot"></span> 8 Active Hydraulic Bays
+          </div>
+          <div class="location-domain">central-hub.apexautocare.com</div>
+          <h3 class="location-name">Metropolitan Central Diagnostic HQ</h3>
+          <p class="location-address">
+            Unit 100, Performance Parkway, Central Auto District
+          </p>
+          <div class="location-details">
+            <div class="detail-row">
+              <span class="detail-label">Hours:</span>
+              <span class="detail-val">Mon - Sat: 07:00 - 21:00</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Specialization:</span>
+              <span class="detail-val">ECU Telemetry, Engine Dyno, Brakes</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Direct Node:</span>
+              <a href="mailto:central@apexautocare.com" class="link-domain">central@apexautocare.com</a>
+            </div>
+          </div>
+          <button class="btn btn-outline btn-block mt-3" onclick="openBookingModal('central-hub.apexautocare.com')">
+            Book Bay at Central Hub
+          </button>
+        </div>
+
+        <!-- Hub 2 -->
+        <div class="location-card">
+          <div class="location-status">
+            <span class="pulse-dot"></span> 6 Express Lube Bays
+          </div>
+          <div class="location-domain">airport-express.apexautocare.com</div>
+          <h3 class="location-name">Airport Express Rapid Hub</h3>
+          <p class="location-address">
+            Terminal Skyway 4B, Airport Industrial Corridor
+          </p>
+          <div class="location-details">
+            <div class="detail-row">
+              <span class="detail-label">Hours:</span>
+              <span class="detail-val">24/7 Continuous Operations</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Specialization:</span>
+              <span class="detail-val">45-Min Lube, Tires, AC Recharge</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Direct Node:</span>
+              <a href="mailto:express@apexautocare.com" class="link-domain">express@apexautocare.com</a>
+            </div>
+          </div>
+          <button class="btn btn-outline btn-block mt-3" onclick="openBookingModal('airport-express.apexautocare.com')">
+            Book Bay at Airport Express
+          </button>
+        </div>
+
+        <!-- Hub 3 -->
+        <div class="location-card">
+          <div class="location-status">
+            <span class="pulse-dot"></span> 6 EV & Tuning Bays
+          </div>
+          <div class="location-domain">westend-hub.apexautocare.com</div>
+          <h3 class="location-name">WestEnd EV & High-Voltage Center</h3>
+          <p class="location-address">
+            Building 42, Electric Boulevard, West Tech Corridor
+          </p>
+          <div class="location-details">
+            <div class="detail-row">
+              <span class="detail-label">Hours:</span>
+              <span class="detail-val">Mon - Sun: 08:00 - 20:00</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Specialization:</span>
+              <span class="detail-val">Electric Vehicles, Battery Testing, 3D Align</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Direct Node:</span>
+              <a href="mailto:westend@apexautocare.com" class="link-domain">westend@apexautocare.com</a>
+            </div>
+          </div>
+          <button class="btn btn-outline btn-block mt-3" onclick="openBookingModal('westend-hub.apexautocare.com')">
+            Book Bay at WestEnd Hub
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 24/7 EMERGENCY SOS BANNER -->
+  <section class="section-sos-banner">
+    <div class="container sos-banner-content">
+      <div class="sos-banner-left">
+        <div class="sos-pill-badge">24/7 RAPID RESPONSE RELAY</div>
+        <h2 class="sos-banner-title">Stranded on the Road? Emergency Assistance Ready.</h2>
+        <p class="sos-banner-desc">
+          Automated roadside dispatch, towing, and mobile diagnostic telemetry vans available 24/7 through <strong class="domain-inline">sos.apexautocare.com</strong>.
+        </p>
+      </div>
+      <div class="sos-banner-right">
+        <a href="tel:+18005550199" class="btn btn-sos btn-lg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          <span>Call 24/7 SOS Relay: +1-800-555-0199</span>
+        </a>
+        <span class="sos-subdomain">dispatch-hotline.apexautocare.com</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (ALL DOMAIN REFERENCES) -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Brand & Domain Meta -->
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <span class="footer-domain">ApexAutoCare.com</span>
+          <span class="footer-tagline">Telemetry Diagnostics & Precision Automobile Workshop</span>
+        </div>
+        <p class="footer-text">
+          Setting the international standard for transparent automotive maintenance, precision mechanical engineering, and digital service tracking.
+        </p>
+        <div class="footer-domain-badges">
+          <span class="tag-badge">ssl.security.apexautocare.com</span>
+          <span class="tag-badge">iso-9001.certified-standards.org</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Service Domains -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Service Domains</h4>
+        <ul class="footer-links">
+          <li><a href="#services">diagnostics.turboscan.io</a></li>
+          <li><a href="#services">powertrain.v8master.tech</a></li>
+          <li><a href="#services">chassis.apexhandling.org</a></li>
+          <li><a href="#services">ev-diagnostics.voltcare.io</a></li>
+          <li><a href="#services">oemparts.brembo-official.de</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Hub Nodes -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Regional Hub Nodes</h4>
+        <ul class="footer-links">
+          <li><a href="#locations">central-hub.apexautocare.com</a></li>
+          <li><a href="#locations">airport-express.apexautocare.com</a></li>
+          <li><a href="#locations">westend-hub.apexautocare.com</a></li>
+          <li><a href="#tracker">radar.apexautocare.com</a></li>
+          <li><a href="#estimator">pricing-engine.apexautocare.com</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Corporate & Compliance -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Compliance & Relay</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:support@apexautocare.com">support.apexautocare.com</a></li>
+          <li><a href="mailto:billing@apexautocare.com">billing.apexautocare.com</a></li>
+          <li><a href="mailto:fleet@apexautocare.com">fleet-accounts.apexautocare.com</a></li>
+          <li><a href="#privacy">privacy-policy.apexautocare.com</a></li>
+          <li><a href="#terms">terms-of-service.apexautocare.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Mobile Notice -->
+    <div class="container footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 <span class="highlight-domain">ApexAutoCare.com</span>. All rights reserved across all registered domain nodes.
+      </div>
+      <div class="footer-legal">
+        <span>ISO-9001 Certified Automotive Maintenance Center</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM STICKY ACTION BAR (PERFECT FOR MOBILE FRIENDLY USABILITY) -->
+  <aside class="mobile-sticky-bar" id="mobileStickyBar" aria-label="Mobile quick actions">
+    <button class="mobile-bar-btn" onclick="scrollToSection('estimator')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+        <line x1="8" y1="6" x2="16" y2="6"></line>
+        <line x1="16" y1="14" x2="16" y2="18"></line>
+      </svg>
+      <span>Calculator</span>
+    </button>
+
+    <button class="mobile-bar-btn" onclick="scrollToSection('tracker')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <span>Live Bay</span>
+    </button>
+
+    <button class="mobile-bar-btn primary-action" onclick="openBookingModal()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      <span>Book Bay</span>
+    </button>
+
+    <a href="tel:+18005550199" class="mobile-bar-btn sos-action">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      <span>SOS 24/7</span>
+    </a>
+  </aside>
+
+  <!-- INTERACTIVE BOOKING MODAL -->
+  <div class="modal-backdrop" id="bookingModalBackdrop">
+    <div class="modal-card" id="bookingModalCard" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close booking modal">&times;</button>
+      
+      <!-- Modal Form View -->
+      <div id="modalFormView">
+        <div class="modal-header">
+          <span class="modal-domain">reservations.apexautocare.com</span>
+          <h3 id="modalTitle">Schedule Automotive Service Bay</h3>
+          <p class="modal-sub">Fast automated slot reservation. Confirmation issued within 30 seconds.</p>
+        </div>
+
+        <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
+          <div class="form-grid">
+            <!-- Full Name / Domain Identifier -->
+            <div class="form-group">
+              <label for="bookClientDomain">Client Domain / Corporate Email *</label>
+              <input type="text" id="bookClientDomain" required placeholder="e.g. client.speedwayfleet.com or your email">
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+              <label for="bookPhone">Contact Mobile / Tel *</label>
+              <input type="tel" id="bookPhone" required placeholder="+1 (555) 000-0000">
+            </div>
+
+            <!-- Vehicle Make & Model -->
+            <div class="form-group">
+              <label for="bookVehicle">Vehicle Make, Model & Year *</label>
+              <input type="text" id="bookVehicle" required placeholder="e.g. 2023 Porsche 911 GT3 or Tesla Model 3">
+            </div>
+
+            <!-- Preferred Service Hub -->
+            <div class="form-group">
+              <label for="bookHub">Preferred Workshop Hub *</label>
+              <select id="bookHub" required>
+                <option value="central-hub.apexautocare.com">central-hub.apexautocare.com (Central HQ)</option>
+                <option value="airport-express.apexautocare.com">airport-express.apexautocare.com (24/7 Express)</option>
+                <option value="westend-hub.apexautocare.com">westend-hub.apexautocare.com (EV & High-Voltage)</option>
+              </select>
+            </div>
+
+            <!-- Preferred Date -->
+            <div class="form-group">
+              <label for="bookDate">Service Date *</label>
+              <input type="date" id="bookDate" required>
+            </div>
+
+            <!-- Preferred Time Slot -->
+            <div class="form-group">
+              <label for="bookTime">Time Slot *</label>
+              <select id="bookTime" required>
+                <option value="08:00 AM - 09:30 AM">08:00 AM - 09:30 AM (Morning Slot)</option>
+                <option value="10:00 AM - 11:30 AM">10:00 AM - 11:30 AM (Popular Slot)</option>
+                <option value="01:00 PM - 02:30 PM">01:00 PM - 02:30 PM (Afternoon Slot)</option>
+                <option value="03:30 PM - 05:00 PM">03:30 PM - 05:00 PM (Late Slot)</option>
+                <option value="06:00 PM - 07:30 PM">06:00 PM - 07:30 PM (Evening Express)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Selected Services Pre-filled -->
+          <div class="form-group mt-3">
+            <label for="bookSelectedServices">Selected Services / Notes</label>
+            <textarea id="bookSelectedServices" rows="3" placeholder="Services requested or custom requirements..."></textarea>
+          </div>
+
+          <!-- Price Confirmation Banner -->
+          <div class="modal-price-banner">
+            <div class="banner-left">
+              <span>Estimated Total:</span>
+              <strong id="modalEstimatedPrice">$215.00</strong>
+            </div>
+            <div class="banner-right">
+              <span>Pay at Bay pickup • Zero cancellation fee</span>
+            </div>
+          </div>
+
+          <!-- Form Submit Button -->
+          <div class="modal-footer mt-4">
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBookingBtn">
+              Confirm & Generate Service Pass
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modal Success Pass View (Shown on Submission) -->
+      <div id="modalSuccessView" class="hidden">
+        <div class="success-banner">
+          <div class="success-icon">✓</div>
+          <h3>Service Bay Reserved Successfully!</h3>
+          <p class="success-sub">Digital Job Token generated at <span class="highlight-domain">radar.apexautocare.com</span></p>
+        </div>
+
+        <div class="pass-card">
+          <div class="pass-header">
+            <span class="pass-domain">ApexAutoCare.com</span>
+            <span class="pass-token" id="passToken">JOB-8821.apexautocare.com</span>
+          </div>
+          <div class="pass-body">
+            <div class="pass-row">
+              <span class="label">Vehicle:</span>
+              <strong id="passVehicle">2023 Porsche 911 GT3</strong>
+            </div>
+            <div class="pass-row">
+              <span class="label">Client:</span>
+              <span id="passClient">client.speedwayfleet.com</span>
+            </div>
+            <div class="pass-row">
+              <span class="label">Hub Node:</span>
+              <span id="passHub">central-hub.apexautocare.com</span>
+            </div>
+            <div class="pass-row">
+              <span class="label">Date & Time:</span>
+              <span id="passDateTime">Oct 12, 2026 @ 10:00 AM</span>
+            </div>
+            <div class="pass-row">
+              <span class="label">Est. Total:</span>
+              <strong class="highlight-price" id="passPrice">$215.00</strong>
+            </div>
+          </div>
+          <div class="pass-footer">
+            <div class="qr-placeholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h3v2h-3v-2zm-3 2h2v3h-2v-3zm3 3h3v3h-3v-3zm-5 2h2v2h-2v-2zm2-4h2v2h-2v-2z"/>
+              </svg>
+            </div>
+            <div class="qr-meta">
+              <span>Present QR or Token at Bay Arrival</span>
+              <span class="qr-domain">checkin.apexautocare.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="success-actions mt-4">
+          <button class="btn btn-primary btn-block" onclick="viewInTracker()">
+            Track This Vehicle in Live Radar
+          </button>
+          <button class="btn btn-outline btn-block mt-2" onclick="closeBookingModal()">
+            Done & Close Window
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
